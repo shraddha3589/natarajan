@@ -1,0 +1,367 @@
+<html>
+<head>
+<title>TestNG:  Login</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Login</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>24/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Jun 17 17:20:49 IST 2016</td>
+</tr>
+<tr><td>Total time:</td><td>59 seconds (59551 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_001, Browser Open, Open, Browser_Firefox, null<br/>
+<a href="#Output-1271041075" onClick='toggleBox("Output-1271041075", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1271041075" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1271041075">
+Browser Open        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>7</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_002, Maximize Browser, Maximize, null, null<br/>
+<a href="#Output-1547883191" onClick='toggleBox("Output-1547883191", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1547883191" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1547883191">
+Maximize Browser        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_003, Load WebPage, Navigate, URL, http://magento.com<br/>
+<a href="#Output-1528769018" onClick='toggleBox("Output-1528769018", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1528769018" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1528769018">
+Load WebPage        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_004, Navigate to Sign In, Click, //a[contains(text(),'My Account')], <br/>
+<a href="#Output-332365138" onClick='toggleBox("Output-332365138", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-332365138" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-332365138">
+Navigate to Sign In        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_005, Enter User Name, SendKeys, //*[@id='email'], natarajan.ramanathan93@gmail.com<br/>
+<a href="#Output-1057507014" onClick='toggleBox("Output-1057507014", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1057507014" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1057507014">
+Enter User Name        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_006, Enter Password, SendKeys, //*[@id='pass'], Welcome@1<br/>
+<a href="#Output-2116179210" onClick='toggleBox("Output-2116179210", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2116179210" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2116179210">
+Enter Password        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_007, Click on Sign In Button, Click, .//*[@name='send'], null<br/>
+<a href="#Output-1765900922" onClick='toggleBox("Output-1765900922", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1765900922" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1765900922">
+Click on Sign In Button        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_008, Click on Log Out, Click, //a[contains(text(),'Log Out')], null<br/>
+<a href="#Output-270661321" onClick='toggleBox("Output-270661321", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-270661321" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-270661321">
+Click on Log Out        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_01, TS_009, Browser Quit, Quit, null, null<br/>
+<a href="#Output-1433208870" onClick='toggleBox("Output-1433208870", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1433208870" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1433208870">
+Browser Quit        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_001, Browser Open, Open, Browser_Chrome, null<br/>
+<a href="#Output-821405322" onClick='toggleBox("Output-821405322", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-821405322" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-821405322">
+Browser Open        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_002, Maximize Browser, Maximize, null, null<br/>
+<a href="#Output-1328323494" onClick='toggleBox("Output-1328323494", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1328323494" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1328323494">
+Maximize Browser        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_003, Load WebPage, Navigate, URL, http://magento.com<br/>
+<a href="#Output-1408533352" onClick='toggleBox("Output-1408533352", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1408533352" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1408533352">
+Load WebPage        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_004, Navigate to Sign In, Click, //a[contains(text(),'My Account')], null<br/>
+<a href="#Output-79919963" onClick='toggleBox("Output-79919963", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-79919963" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-79919963">
+Navigate to Sign In        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_005, Click Register Button, Click, .//*[@type='button'], null<br/>
+<a href="#Output-176955204" onClick='toggleBox("Output-176955204", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-176955204" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-176955204">
+Click Register Button        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_006, Filling First Name, SendKeys, .//*[@id='firstname'], Natarajan<br/>
+<a href="#Output-979550238" onClick='toggleBox("Output-979550238", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-979550238" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-979550238">
+Filling First Name        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_007, Filling Last Name, SendKeys, .//*[@id='lastname'], Ramanathan<br/>
+<a href="#Output-1398260359" onClick='toggleBox("Output-1398260359", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1398260359" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1398260359">
+Filling Last Name        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_008, Filling e-mail address, SendKeys, .//*[@id='email_address'], natarajan.ramanathan93@gmail.com<br/>
+<a href="#Output-628392976" onClick='toggleBox("Output-628392976", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-628392976" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-628392976">
+Filling e-mail address        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_009, Selecting Company Profile, Select, .//*[@id='customer_company_type'], Develops Magento extensions<br/>
+<a href="#Output-815336475" onClick='toggleBox("Output-815336475", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-815336475" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-815336475">
+Selecting Company Profile        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_010, Selecting My Role, Select, .//*[@id='customer_individual_role'], Technical/developer<br/>
+<a href="#Output-1660837991" onClick='toggleBox("Output-1660837991", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1660837991" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1660837991">
+Selecting My Role        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_011, Filling Screen Name, SendKeys, .//*[@id='screen_name'], natramu93<br/>
+<a href="#Output-1195396074" onClick='toggleBox("Output-1195396074", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1195396074" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1195396074">
+Filling Screen Name        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_012, Filling Password, SendKeys, .//*[@id='password'], Welcome@1<br/>
+<a href="#Output-702999333" onClick='toggleBox("Output-702999333", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-702999333" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-702999333">
+Filling Password        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_013, Filling Confirm Password, SendKeys, .//*[@id='confirmation'], Welcome@1<br/>
+<a href="#Output-647973805" onClick='toggleBox("Output-647973805", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-647973805" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-647973805">
+Filling Confirm Password        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_014, Check Security Updates Checkbox, Click, .//*[@id='security_updates'], null<br/>
+<a href="#Output-2076249476" onClick='toggleBox("Output-2076249476", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2076249476" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2076249476">
+Check Security Updates Checkbox        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>execution.Data@4cf777e8</td></tr>
+<tr>
+<td title='execution.Data.TestStep()'><b>TestStep</b><br>Test class: execution.Data<br>Parameters: Login_02, TS_015, Submit Button Click, Click, .//*[@id='registerSubmit'], null<br/>
+<a href="#Output-1434066477" onClick='toggleBox("Output-1434066477", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1434066477" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1434066477">
+Submit Button Click        Passed<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>execution.Data@4cf777e8</td></tr>
+</table><p>
+</body>
+</html>

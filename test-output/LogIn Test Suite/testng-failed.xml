@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [LogIn Test Suite]">
+  <listeners>
+    <listener class-name="atu.testng.reports.listeners.ATUReportsListener"/>
+    <listener class-name="atu.testng.reports.listeners.ConfigurationListener"/>
+    <listener class-name="atu.testng.reports.listeners.MethodListener"/>
+  </listeners>
+  <test name="UI Testing(failed)">
+    <groups>
+      <run>
+        <exclude name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="execution.UITesting">
+        <methods>
+          <include name="loadEnvironment"/>
+          <include name="Teardown"/>
+          <include name="Verify_ForgotPassword"/>
+        </methods>
+      </class> <!-- execution.UITesting -->
+    </classes>
+  </test> <!-- UI Testing(failed) -->
+</suite> <!-- Failed suite [LogIn Test Suite] -->

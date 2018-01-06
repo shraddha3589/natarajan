@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Current Run Reports</title>
+
+        <link rel="stylesheet" type="text/css" href="../../HTML_Design_Files/CSS/design.css" />
+        <link rel="stylesheet" type="text/css" href="../../HTML_Design_Files/CSS/jquery.jqplot.css" />
+
+        <script type="text/javascript" src="../../HTML_Design_Files/JS/jquery.min.js"></script>
+        <script type="text/javascript" src="../../HTML_Design_Files/JS/jquery.jqplot.min.js"></script>
+        <!--[if lt IE 9]>
+        <script language="javascript" type="text/javascript" src="../../HTML_Design_Files/JS/excanvas.js"></script>
+        <![endif]-->
+
+        <script language="javascript" type="text/javascript" src="../../HTML_Design_Files/JS/jqplot.pieRenderer.min.js"></script>
+        <script type="text/javascript" src="pieChart.js"></script>
+
+<script language="javascript" type="text/javascript">$(document).ready(function() { $(".video").hide();$("#showmenu").show(); $('#showmenu').click(function(){ $('.video').toggle("slide"); }); });</script><style>#showmenu{text-align:center; padding-top:350px;color: #585858; font-size: 14px;}#video{height: 550px;    margin-top: 5px;    width: 97%;    border-style: solid;    border-width: 1px;    border-color: #21ABCD;    /* Shadow for boxes */    -moz-box-shadow: 0 0 10px #CCCCCC;    -ms-box-shadow: 0 0 10px #CCCCCC;    -webkit-box-shadow: 0 0 10px #CCCCCC;    box-shadow: 0 0 10px #CCCCCC;    zoom: 1;    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=0),        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=90),        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=180),        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=270);    background-color: white;}</style><script language="javascript" type="text/javascript">
+$(document).ready(function() {
+	$('#tcFilter').on('change',function(){
+    if($(this).val()=='pass'){
+        $('.pass').show();
+		$('.fail').hide();
+		$('.skip').hide();
+		$('.config').hide();
+    }
+	if($(this).val()=='fail'){
+        $('.pass').hide();
+		$('.fail').show();
+		$('.skip').hide();
+		$('.config').hide();
+    }
+	
+	if($(this).val()=='skip'){
+        $('.pass').hide();
+		$('.fail').hide();
+		$('.skip').show();
+		$('.config').hide();
+    }
+	
+if($(this).val()=='tests'){ $('.pass').show(); $('.fail').show(); $('.skip').show(); $('.config').hide(); }	if($(this).val()=='config'){
+        $('.pass').hide();
+		$('.fail').hide();
+		$('.skip').hide();
+		$('.config').show();
+    }
+	
+	if($(this).val()=='all'){
+        $('.pass').show();
+		$('.fail').show();
+		$('.skip').show();
+		$('.config').show();
+    }
+  });
+});       
+</script>
+    </head>
+    <body>
+        <table id="mainTable">
+            <tr id="header" >
+                <td id="logo"><img src="../../HTML_Design_Files/IMG/atu.jpg" alt="Logo" height="70" width="140" /> <br/><i style="float:left;padding-left:20px;font-size:12px">Reflections of Visionary Minds</i></td>
+                <td id="headertext">
+                    ATU Graphical Reports for Selenium -  TestNG<div style="padding-right:20px;float:right"><img src="../../HTML_Design_Files/IMG/" height="70" width="140" /> </i></div></td>
+
+            </tr>
+
+            <tr id="container">
+                <td id="menu">
+                    <ul> 
+
+ <li class="menuStyle"><a href="../../index.html" >Index</a></li><li style="padding-top: 4px;"><a href="../ConsolidatedPage.html" >Consolidated Page</a></li>
+
+
+                    </ul>
+                </td>
+
+
+<td id="content">
+                    <div class="info">
+                        The following pie chart demonstrates the percentage of Passed, Failed and Skipped Test Cases<br/>
+                        Time Taken for Executing below Test Cases: <b>102 Sec</b> <br/>
+                        Current Run Number: <b>Run 5</b>
+                    </div>
+<div class="info"><br/><b>Run Description</b><br/><br/>Here you can give description about the current Run</div>                    <div>
+                        <div class="chartStyle summary" style="width: 32%;background-color: #3B9C9C;">
+                            <b>Summary</b><br/><br/>
+                            <table>
+                            <tr>
+                                <td>Execution Date</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td>23-May-2016 10:55:46</td>
+                            </tr>
+                            <tr>
+                                <td>Total Test Cases</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Passed</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td>12</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Failed</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td>0</td>
+                            </tr>
+
+                            <tr>
+                                <td>Skipped</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td>0</td>
+                            </tr>
+                        </table> 
+                        </div>                        <div class="chartStyle" style="text-align: left;margin-left: 30px;float: left;width: 60%;">                        
+                            <div id="chart" style="height:300px;color:black;"></div>
+                        </div>
+                    </div>
+                    <div>
+
+<p id="showmenu">No Video Recording Available</p>
+<div style="float:left;  color: #585858; font-size: 14px;">	<select id="tcFilter" class="filter">
+						<option class="filterOption" value="all">All Methods</option>
+						<option class="filterOption" value="tests">Test Methods</option>
+						<option class="filterOption" value="pass">Passed Test Cases</option>
+						<option class="filterOption" value="fail">Failed Test Cases</option>
+						<option class="filterOption" value="skip">Skipped Test Cases</option>
+						<option class="filterOption" value="config">Configuration Methods</option>
+					</select>	Filter The Methods Based on Selection</div>
+                        <table id="tableStyle" class="chartStyle" style="height:50px; float: left">
+                            <tr>
+                                <th>Package Name</th>
+                                <th>Class Name</th>
+                                <th>Method Type</th>
+                                <th>Test Case Name</th>
+<th>Iteration</th>                                <th>Time</th>
+                                <th style="width: 7%">Status</th>
+                            </tr>
+
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">Verify_Title</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Title_Iteration1\Verify_Title.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">Verify_Header</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Header_Iteration1\Verify_Header.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">Verify_Email_Label</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Label_Iteration1\Verify_Email_Label.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">Verify_Email_Text_Box</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Email_Text_Box_Iteration1\Verify_Email_Text_Box.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">Verify_Password_Label</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Label_Iteration1\Verify_Password_Label.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">Verify_Password_Text_Box</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_Password_Text_Box_Iteration1\Verify_Password_Text_Box.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">Verify_RememberMe_Label</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_Label_Iteration1\Verify_RememberMe_Label.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">Verify_RememberMe_ChkBox</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_RememberMe_ChkBox_Iteration1\Verify_RememberMe_ChkBox.html">6 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">Verify_SignIn_Btn</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_SignIn_Btn_Iteration1\Verify_SignIn_Btn.html">3 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">UITesting</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">Verify_ForgotPassword</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">1</a></td>
+                                <td><a href="LogIn Test Suite\UI Testing\execution\UITesting\Verify_ForgotPassword_Iteration1\Verify_ForgotPassword.html">6 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">LogInTesting</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">ValidCredentials_Login</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">1</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\ValidCredentials_Login_Iteration1\ValidCredentials_Login.html">19 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                            <tr class="all pass">
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">execution</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">LogInTesting</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">Test Method</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">InValidCredential_Login</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">1</a></td>
+                                <td><a href="LogIn Test Suite\LogIn Testing\execution\LogInTesting\InValidCredential_Login_Iteration1\InValidCredential_Login.html">15 Sec</a></td>
+                                <td><img  style="border: none; width: 25px" src="../../HTML_Design_Files/IMG/pass.png"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>            <tr id="footer">
+                <td colspan="2">
+                    Best Viewed in &nbsp;
+                    <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> &nbsp;
+                    <a href="http://www.apple.com/in/safari/">Safari</a>&nbsp;
+                    <a href="http://www.google.com/chrome/">Chrome</a>&nbsp;
+                    <a href="http://windows.microsoft.com/en-IN/internet-explorer/download-ie">IE 9 & Above</a>&nbsp;
+                    &nbsp;
+ATU Reporter Version: v5.1.1                    &nbsp;
+                    Reports by: <a href="http://automationtestingutilities.blogspot.in/">Automation Testing Utilities</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
